@@ -1,0 +1,405 @@
+/* ===== Base ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --burgundy-dark: #5c1330;
+    --burgundy: #7a1f3d;
+    --burgundy-mid: #a33a5c;
+    --pink: #b3486a;
+    --blush: #e8c3cd;
+    --blush-soft: #f3d9df;
+    --cream: #fdf6f2;
+    --ink: #3d3d3d;
+}
+
+body{
+    background: linear-gradient(160deg, #fdf6f2 0%, #f8ecec 55%, #f3d9df 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'Edu NSW ACT Foundation', Cursive;
+}
+
+/* ===== Top bar ===== */
+.top-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--burgundy-dark);
+    height: 100px;
+    padding: 0 5%;
+    font-family: 'Edu NSW ACT Foundation', Cursive;
+}
+.logo{
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+.logo:hover{ color: var(--blush); }
+
+nav{
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+    font-family: 'Edu NSW ACT Foundation', Cursive;
+}
+nav a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+nav a:hover{ color: var(--blush); }
+
+/* ===== Shared rule ===== */
+.rule{
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: var(--burgundy);
+    margin: 18px 0;
+}
+
+/* ===== HERO ===== */
+.hero{
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    margin: 40px auto 0;
+    width: 92%;
+    max-width: 1280px;
+    border-radius: 24px;
+    padding: 55px 60px 60px;
+}
+/* soft blush circle, top-left */
+.hero::before{
+    content: "";
+    position: absolute;
+    top: -110px;
+    left: -70px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: var(--blush-soft);
+}
+/* burgundy corner curve, bottom-right */
+.hero::after{
+    content: "";
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50% 0 24px 0;
+    background: var(--burgundy);
+}
+
+.hero-inner{
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 55px;
+}
+
+.hero-photo img{
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--burgundy-dark);
+    transition: 0.3s ease;
+}
+.hero-photo img:hover{
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(122, 31, 61, 0.35);
+}
+
+.eyebrow{
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: var(--burgundy);
+    margin-bottom: 4px;
+}
+.hero-name{
+    font-family: 'Edu NSW ACT Foundation', Cursive;
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--burgundy-dark);
+    margin-bottom: 10px;
+}
+.hero-role{
+    font-size: 1.9rem;
+    letter-spacing: 5px;
+    color: var(--burgundy);
+}
+
+.intro{
+    font-size: 1.5rem;
+    color: var(--ink);
+    line-height: 1.5;
+    max-width: 34ch;
+}
+.intro strong{ color: var(--burgundy); }
+
+.icons{
+    display: flex;
+    gap: 22px;
+    margin-top: 22px;
+}
+.icons a{
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.icons i{
+    font-size: 34px;
+    color: var(--burgundy-dark);
+}
+.icons a:hover{ transform: translateY(-4px); }
+.icons a:hover i{ color: var(--pink); }
+
+.hero-decor{
+    border-left: 1px solid rgba(122, 31, 61, 0.3);
+    padding-left: 45px;
+}
+.hero-decor svg{
+    width: 340px;
+    height: auto;
+    display: block;
+}
+
+/* ===== ABOUT ===== */
+.about{
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    width: 92%;
+    max-width: 1280px;
+    margin: 35px auto;
+    border-radius: 24px;
+    padding: 55px 60px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+}
+.about::after{
+    content: "";
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50% 0 24px 0;
+    background: var(--burgundy);
+}
+
+.about-inner{
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 60px;
+}
+
+.about-main{
+    border-left: 4px solid var(--burgundy-dark);
+    padding-left: 28px;
+}
+.about-heading{
+    font-family: 'Edu NSW ACT Foundation', Cursive;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--burgundy-dark);
+    line-height: 1;
+}
+.about-main p{
+    font-size: 1.2rem;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 62ch;
+}
+.about-main p:last-child{ margin-bottom: 0; }
+.about-main strong{ color: var(--burgundy); }
+
+.about-side{
+    border-left: 1px solid rgba(122, 31, 61, 0.3);
+    padding-left: 45px;
+}
+.quote-mark{
+    display: block;
+    font-size: 5rem;
+    line-height: 0.6;
+    color: var(--blush);
+    font-family: Georgia, serif;
+}
+.quote{
+    font-size: 1.9rem;
+    font-style: italic;
+    color: var(--burgundy);
+    line-height: 1.4;
+    margin-top: 18px;
+}
+
+.meta{
+    list-style: none;
+    margin-top: 40px;
+}
+.meta li{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 18px;
+}
+.meta i{
+    color: var(--burgundy-dark);
+    font-size: 1.2rem;
+    width: 22px;
+    text-align: center;
+}
+
+/* ===== SKILLS / CERTIFICATES ===== */
+.skills-projects{
+    width: 80%;
+    margin: 60px auto;
+    padding: 40px;
+    text-align: center;
+}
+.skills-projects h2{
+    font-family: 'Edu NSW ACT Foundation', Cursive;
+    color: var(--burgundy);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+.cert-intro{
+    color: var(--ink);
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+
+.skills{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.box-1{
+    border: 1px solid rgba(122, 31, 61, 0.3);
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+.box-1:hover{
+    transform: translateY(-6px);
+    border-color: var(--burgundy);
+    box-shadow: 0 12px 25px rgba(122, 31, 61, 0.2);
+}
+.skill-icon{
+    display: block;
+    font-size: 48px;
+    color: var(--burgundy);
+    margin-bottom: 15px;
+}
+.box-1 h4{
+    font-size: 1.5rem;
+    color: var(--burgundy);
+    margin-bottom: 12px;
+}
+.box-1 p{
+    font-size: 1.1rem;
+    color: var(--ink);
+    line-height: 1.4;
+}
+
+/* ===== CONTACT / FOOTER ===== */
+#contact{
+    font-size: 25px;
+    background-color: var(--burgundy);
+    padding: 40px;
+    text-align: center;
+}
+#contact h2{ color: white; }
+#contact a{
+    color: white;
+    display: inline-block;
+    margin: 10px 0;
+    text-decoration: none;
+}
+#contact a:hover{ color: var(--blush); }
+
+#footer{
+    background-color: #4a0f26;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid var(--pink);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1050px){
+    .hero-inner{
+        grid-template-columns: auto 1fr;
+        gap: 40px;
+    }
+    .hero-decor{
+        grid-column: 1 / -1;
+        border-left: none;
+        border-top: 1px solid rgba(122, 31, 61, 0.3);
+        padding-left: 0;
+        padding-top: 30px;
+    }
+    .hero-decor svg{ margin: 0 auto; }
+    .hero-name{ font-size: 3.6rem; }
+    .about-inner{ grid-template-columns: 1fr; }
+    .about-side{
+        border-left: none;
+        border-top: 1px solid rgba(122, 31, 61, 0.3);
+        padding-left: 0;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 768px){
+    .top-bar{
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    nav{
+        font-size: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero, .about{
+        padding: 35px 25px;
+        width: 94%;
+    }
+    .hero-inner{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+    .hero-content{ text-align: center; }
+    .rule{ margin: 18px auto; }
+    .hero-photo img{ width: 210px; height: 210px; }
+    .hero-name{ font-size: 2.8rem; }
+    .hero-role{ font-size: 1.3rem; letter-spacing: 3px; }
+    .intro{ max-width: none; }
+    .icons{ justify-content: center; }
+    .about-main{
+        border-left: none;
+        padding-left: 0;
+    }
+    .skills{ grid-template-columns: 1fr; }
+}
